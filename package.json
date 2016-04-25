@@ -2,7 +2,7 @@
   "name": "shopify-dump",
   "version": "0.1.0",
   "description": "Pull all the products by collection from a Shopify site.",
-  "main": "pull.js",
+  "main": "index.js",
   "dependencies": {
     "request-json": "^0.5.5",
     "async": "^1.5.2"
