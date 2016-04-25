@@ -1,0 +1,30 @@
+{
+  "name": "shopify-dump",
+  "version": "0.1.0",
+  "description": "Pull all the products by collection from a Shopify site.",
+  "main": "pull.js",
+  "dependencies": {
+    "request-json": "^0.5.5",
+    "async": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew-templeton/shopify-dump.git"
+  },
+  "keywords": [
+    "shopify",
+    "product",
+    "dump",
+    "extractor"
+  ],
+  "author": "Andrew Templeton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew-templeton/shopify-dump/issues"
+  },
+  "homepage": "https://github.com/andrew-templeton/shopify-dump#readme"
+}
