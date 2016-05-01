@@ -2,23 +2,29 @@
 var fs = require('fs');
 var path = require('path');
 
+var args = require('nano-argv')({
+	host: 'localhost',
+	concurrency: 5,
+	flatten: false
+});
+
 var pull = require('./');
-var host = process.argv[2];
-var outputFile = process.argv[3]
-		? path.resolve(process.argv[3])
+var host = args.host;
+var outputFile = args.output
+		? path.resolve(args.output)
 		: (process.cwd() + '/products.json');
 
-pull(host,
-	function(err, masterHash) {
-		console.log('All categories scraped!');
-		fs.writeFileSync(outputFile, JSON.stringify(masterHash));
-		console.log('Wrote to disk.');
-	},
-	5, 
-	function(type) {
+pull(args.host, function(err, masterHash) {
+	console.log('All categories scraped!');
+	fs.writeFileSync(outputFile, JSON.stringify(masterHash, null, 2));
+	console.log('Wrote to disk.');
+}, {
+	concurrency: args.concurrency || 5,
+	pre: function(type) {
 		console.log('Downloading: ' + type);
 	},
-	function(type) {
+	post: function(type) {
 		console.log('Finished: ' + type);
-	}
-);
+	},
+	flatten: args.flatten
+});

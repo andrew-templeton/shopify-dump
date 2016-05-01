@@ -1,11 +1,12 @@
 {
   "name": "shopify-dump",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Pull all the products by collection from a Shopify site.",
   "main": "index.js",
   "dependencies": {
-    "request-json": "^0.5.5",
-    "async": "^1.5.2"
+    "async": "^1.5.2",
+    "nano-argv": "^1.0.2",
+    "request-json": "^0.5.5"
   },
   "devDependencies": {},
   "scripts": {
